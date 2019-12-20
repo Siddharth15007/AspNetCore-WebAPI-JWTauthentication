@@ -36,7 +36,6 @@ namespace StudentWebApi
         {
             Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
             services.AddDbContext<StudentContext>(item => item.UseSqlServer(Configuration.GetConnectionString("StudContext")));
-           // services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddControllers();
             services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddEntityFrameworkStores<StudentContext>()
